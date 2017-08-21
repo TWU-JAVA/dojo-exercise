@@ -16,5 +16,7 @@ public class Rectangle {
         return area;
     }
 
-
+    public static Rectangle createSquare(double side){
+        return new Rectangle(side,side);
+    }
 }

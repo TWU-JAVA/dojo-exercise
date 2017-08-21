@@ -21,4 +21,11 @@ public class RectangleTest {
         assertThrows(IllegalArgumentException.class, () -> new Rectangle(0, 2));
     }
 
+    @Test
+    public void shouldAreaEqualsWhenSide2(){
+        double expectedArea = 4;
+        Rectangle square = Rectangle.createSquare(2);
+        assertEquals(expectedArea, square.area());
+    }
+
 }
