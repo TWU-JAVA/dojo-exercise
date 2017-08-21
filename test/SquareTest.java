@@ -1,17 +1,19 @@
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class SquareTest {
 
     @Test
-    public void testAreaWithSide1ShouldBe1(){
+    public void testAreaWithSide1ShouldBe1() {
         Square square = new Square(1);
-        Assert.assertEquals(1,square.calculateArea());
+        assertEquals(1, square.area());
     }
 
     @Test
-    public void testAreaWithSide0ShouldThrowException(){
-        Square square = new Square(0);
-        Assert.assertEquals(IndexOutOfBoundsException.class,square.calculateArea());
+    public void testAreaWithSide0ShouldThrowException() {
+        assertThrows(IllegalArgumentException.class, () -> new Square(0));
     }
+
 }
